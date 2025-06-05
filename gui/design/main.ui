@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>583</height>
+    <width>820</width>
+    <height>540</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1280</width>
-    <height>0</height>
+    <width>820</width>
+    <height>540</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1280</width>
-    <height>720</height>
+    <width>820</width>
+    <height>540</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -29,10 +29,10 @@
    <widget class="QFrame" name="frame_buttons">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>241</width>
-      <height>41</height>
+      <x>-20</x>
+      <y>0</y>
+      <width>861</width>
+      <height>47</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -48,14 +48,16 @@ border-radius: 10px;</string>
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>5</y>
+       <x>35</x>
+       <y>8</y>
        <width>191</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(236, 236, 236);
+background-color: rgb(245, 245, 245);
+color: rgb(0, 0, 0);
 selection-color: rgb(227, 227, 227);
 border-color: rgb(227, 227, 227);</string>
      </property>
@@ -65,18 +67,21 @@ border-color: rgb(227, 227, 227);</string>
      <property name="text">
       <string extracomment="Введите игрока для поиска"/>
      </property>
+     <property name="placeholderText">
+      <string>Поиск по игрокам...</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="search_button">
      <property name="geometry">
       <rect>
-       <x>206</x>
-       <y>5</y>
+       <x>232</x>
+       <y>8</y>
        <width>31</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(236, 236, 236);</string>
+      <string notr="true">background-color: rgb(245, 245, 245);</string>
      </property>
      <property name="text">
       <string/>
@@ -86,77 +91,17 @@ border-color: rgb(227, 227, 227);</string>
        <normaloff>../icons/more.png</normaloff>../icons/more.png</iconset>
      </property>
     </widget>
-   </widget>
-   <widget class="QFrame" name="frame_2">
-    <property name="geometry">
-     <rect>
-      <x>1040</x>
-      <y>20</y>
-      <width>221</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(227, 227, 227);
-border-radius: 10px;</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QPushButton" name="add_button">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>5</y>
-       <width>81</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(236, 236, 236);</string>
-     </property>
-     <property name="text">
-      <string>Добавить</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="delete_button">
-     <property name="geometry">
-      <rect>
-       <x>96</x>
-       <y>5</y>
-       <width>81</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(236, 236, 236);</string>
-     </property>
-     <property name="text">
-      <string>Удалить</string>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>../icons/cancel.png</normaloff>../icons/cancel.png</iconset>
-     </property>
-    </widget>
     <widget class="QPushButton" name="refresh_button">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>5</y>
+       <x>634</x>
+       <y>8</y>
        <width>31</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(236, 236, 236);</string>
+      <string notr="true">background-color: rgb(245, 245, 245);</string>
      </property>
      <property name="text">
       <string/>
@@ -166,15 +111,265 @@ border-radius: 10px;</string>
        <normaloff>../icons/refresh.png</normaloff>../icons/refresh.png</iconset>
      </property>
     </widget>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>8</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(245, 245, 245);
+border-radius: 10px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="delete_button">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>0</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Удалить</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/cancel.png</normaloff>../icons/cancel.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="ButtonText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="ButtonText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Text">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="ButtonText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>245</red>
+            <green>245</green>
+            <blue>245</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Добавить</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>70</y>
-      <width>1261</width>
-      <height>461</height>
+      <y>48</y>
+      <width>821</width>
+      <height>441</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>821</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>
@@ -183,7 +378,7 @@ border-radius: 10px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1280</width>
+     <width>820</width>
      <height>21</height>
     </rect>
    </property>
@@ -198,12 +393,26 @@ border-radius: 10px;</string>
      <addaction name="action_3"/>
      <addaction name="action_4"/>
     </widget>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>Тип базы данных</string>
+     </property>
+     <addaction name="actionMySQL"/>
+     <addaction name="actionSQLite"/>
+    </widget>
     <addaction name="menu_2"/>
+    <addaction name="menu_4"/>
+    <addaction name="separator"/>
+    <addaction name="action_5"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
      <string>Вспомогательные таблицы</string>
     </property>
+    <addaction name="actionActivity"/>
+    <addaction name="actionClasses"/>
+    <addaction name="actionGuild"/>
+    <addaction name="actionEvents"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_3"/>
@@ -211,12 +420,47 @@ border-radius: 10px;</string>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_3">
    <property name="text">
-    <string>Показывать</string>
+    <string>Скрыть</string>
    </property>
   </action>
   <action name="action_4">
    <property name="text">
-    <string>Скрыть</string>
+    <string>Показывать</string>
+   </property>
+  </action>
+  <action name="actionActivity">
+   <property name="text">
+    <string>Активность</string>
+   </property>
+  </action>
+  <action name="actionClasses">
+   <property name="text">
+    <string>Классы</string>
+   </property>
+  </action>
+  <action name="actionGuild">
+   <property name="text">
+    <string>Вклад в гильдию</string>
+   </property>
+  </action>
+  <action name="actionEvents">
+   <property name="text">
+    <string>Участие в ивентах</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="actionMySQL">
+   <property name="text">
+    <string>MySQL</string>
+   </property>
+  </action>
+  <action name="actionSQLite">
+   <property name="text">
+    <string>SQLite</string>
    </property>
   </action>
  </widget>

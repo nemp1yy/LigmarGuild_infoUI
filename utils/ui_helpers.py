@@ -16,6 +16,7 @@ class TableManager:
         if hide_id:
             table_view.setColumnHidden(0, True)
 
+
 class MessageHelper:
     """Помощник для показа сообщений"""
 
@@ -33,6 +34,47 @@ class MessageHelper:
     def show_info(parent, title, message):
         """Показ информационного сообщения"""
         QMessageBox.information(parent, title, message)
+
+    @staticmethod
+    def show_question(parent, title, message, buttons=QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No):
+        """Показ диалога с вопросом"""
+        return QMessageBox.question(parent, title, message, buttons)
+
+
+class ModelHelper:
+    """Помощник для работы с моделями данных"""
+
+    @staticmethod
+    def set_model_headers(model, headers_dict):
+        """Установка заголовков модели
+
+        Args:
+            model: Модель данных
+            headers_dict: Словарь {column_index: header_name}
+        """
+        for column, header in headers_dict.items():
+            model.setHeaderData(column, Qt.Orientation.Horizontal, header)
+
+    @staticmethod
+    def add_row_with_defaults(model, defaults_dict):
+        """Добавление строки со значениями по умолчанию
+
+        Args:
+            model: Модель данных
+            defaults_dict: Словарь {column_index: default_value}
+
+        Returns:
+            int: Индекс добавленной строки или -1 при ошибке
+        """
+        try:
+            row = model.rowCount()
+            if model.insertRow(row):
+                for column, value in defaults_dict.items():
+                    model.setData(model.index(row, column), value)
+                return row
+            return -1
+        except Exception:
+            return -1
 
 
 class FormUtils:
@@ -186,26 +228,44 @@ class FilterHelper:
 
         return filter_model
 
+
 class MultiFieldFilterProxyModel(QSortFilterProxyModel):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.filters = {}  # ключ: номер колонки, значение: фильтр (строка)
 
     def set_filters(self, filters: dict):
-        self.filters = filters
+        """Установка фильтров для множественных колонок
+
+        Args:
+            filters: Словарь {column_index: search_text}
+        """
+        self.filters = {k: v for k, v in filters.items() if v.strip()}
         self.invalidateFilter()
 
     def clear_filters(self):
+        """Очистка всех фильтров"""
         self.filters = {}
         self.invalidateFilter()
 
     def filterAcceptsRow(self, source_row, source_parent):
+        """Проверка соответствия строки фильтрам"""
+        if not self.filters:
+            return True
+
         model = self.sourceModel()
+
+        # Проверяем, содержит ли хотя бы одна из указанных колонок искомый текст
         for column, pattern in self.filters.items():
             if not pattern:
                 continue
+
             index = model.index(source_row, column, source_parent)
-            data = str(model.data(index)).lower()
-            if pattern.lower() not in data:
-                return False
-        return True
+            if not index.isValid():
+                continue
+
+            data = str(model.data(index, Qt.ItemDataRole.DisplayRole) or "").lower()
+            if pattern.lower() in data:
+                return True  # Найдено совпадение в одной из колонок
+
+        return False  # Не найдено совпадений ни в одной колонке
