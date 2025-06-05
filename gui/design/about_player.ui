@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlayerDetailDialog</class>
+ <widget class="QDialog" name="PlayerDetailDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>332</width>
+    <height>578</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Детали игрока</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="basicInfoGroup">
+     <property name="title">
+      <string>Основная информация</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="nicknameLabel">
+        <property name="text">
+         <string>Никнейм:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="nicknameEdit"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="tagLabel">
+        <property name="text">
+         <string>Тег:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="tagEdit"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="classLabel">
+        <property name="text">
+         <string>Класс:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="classComboBox"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="levelLabel">
+        <property name="text">
+         <string>Уровень:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QSpinBox" name="levelSpinBox">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="joinedDateLabel">
+        <property name="text">
+         <string>Дата вступления:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QDateEdit" name="joinedDateEdit">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="statusLabel">
+        <property name="text">
+         <string>Статус:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QComboBox" name="statusComboBox">
+        <item>
+         <property name="text">
+          <string>Активен</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Неактивен</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Заморожен</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Исключен</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="activityGroup">
+     <property name="title">
+      <string>Активность</string>
+     </property>
+     <layout class="QGridLayout" name="activityGridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="weeklyDamageLabel">
+        <property name="text">
+         <string>Урон за неделю:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="weeklyDamageSpinBox">
+        <property name="maximum">
+         <number>999999</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="raidParticipationLabel">
+        <property name="text">
+         <string>Участие в рейдах (%):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="raidParticipationSpinBox">
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="contributionGroup">
+     <property name="title">
+      <string>Вклад в гильдию</string>
+     </property>
+     <layout class="QGridLayout" name="contributionGridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="leadershipLabel">
+        <property name="text">
+         <string>Роль в руководстве:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="leadershipComboBox">
+        <item>
+         <property name="text">
+          <string>Участник</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Офицер</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Заместитель лидера</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Лидер</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="resourcesLabel">
+        <property name="text">
+         <string>Взносы ресурсов:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="resourcesSpinBox">
+        <property name="maximum">
+         <number>999999</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="historyGroup">
+     <property name="title">
+      <string>История событий</string>
+     </property>
+     <layout class="QVBoxLayout" name="historyLayout">
+      <item>
+       <widget class="QTableView" name="historyTableView">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="gridStyle">
+         <enum>Qt::SolidLine</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>PlayerDetailDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>PlayerDetailDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

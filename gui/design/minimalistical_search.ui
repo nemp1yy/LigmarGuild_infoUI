@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>431</width>
-    <height>312</height>
+    <height>150</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
      <x>123</x>
      <y>0</y>
      <width>20</width>
-     <height>271</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="orientation">
@@ -34,7 +34,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>270</y>
+     <y>100</y>
      <width>431</width>
      <height>51</height>
     </rect>
@@ -59,7 +59,8 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(249, 249, 249);
-border-radius: 8px;</string>
+border-radius: 8px;
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Очистить</string>
@@ -80,7 +81,8 @@ border-radius: 8px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(249, 249, 249);
-border-radius: 8px;</string>
+border-radius: 8px;
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Найти</string>
@@ -101,7 +103,8 @@ border-radius: 8px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(249, 249, 249);
-border-radius: 8px;</string>
+border-radius: 8px;
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Отменить</string>
@@ -116,7 +119,7 @@ border-radius: 8px;</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>70</y>
+     <y>40</y>
      <width>91</width>
      <height>16</height>
     </rect>
@@ -129,8 +132,8 @@ border-radius: 8px;</string>
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>70</y>
-     <width>42</width>
+     <y>40</y>
+     <width>61</width>
      <height>22</height>
     </rect>
    </property>
@@ -144,9 +147,9 @@ border-radius: 8px;</string>
   <widget class="QSpinBox" name="spinBox_2">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>70</y>
-     <width>42</width>
+     <x>250</x>
+     <y>40</y>
+     <width>61</width>
      <height>22</height>
     </rect>
    </property>
@@ -157,8 +160,8 @@ border-radius: 8px;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>70</y>
+     <x>230</x>
+     <y>40</y>
      <width>16</width>
      <height>16</height>
     </rect>
@@ -179,7 +182,7 @@ border-radius: 8px;</string>
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>200</y>
+     <y>70</y>
      <width>111</width>
      <height>22</height>
     </rect>
@@ -209,7 +212,7 @@ border-radius: 8px;</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>190</y>
+     <y>70</y>
      <width>47</width>
      <height>13</height>
     </rect>
@@ -236,7 +239,7 @@ border-radius: 8px;</string>
     <rect>
      <x>150</x>
      <y>10</y>
-     <width>81</width>
+     <width>111</width>
      <height>22</height>
     </rect>
    </property>
@@ -251,9 +254,9 @@ border-radius: 8px;</string>
   <widget class="QDateEdit" name="dateEdit_2">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>300</x>
      <y>10</y>
-     <width>81</width>
+     <width>111</width>
      <height>22</height>
     </rect>
    </property>
@@ -268,7 +271,7 @@ border-radius: 8px;</string>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>280</x>
      <y>10</y>
      <width>16</width>
      <height>16</height>
@@ -284,321 +287,6 @@ border-radius: 8px;</string>
    </property>
    <property name="text">
     <string>-</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox_3">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>230</y>
-     <width>111</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>Все роли</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Лидер</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Заместитель</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Офицер</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Участник</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Новичок</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>220</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Роль</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox_4">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>170</y>
-     <width>111</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>160</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Класс</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Радиус взноса</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_3">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>40</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>40</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Calibri</family>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>-</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_4">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>40</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>100</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Радиус урона</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_5">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>100</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>100</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Calibri</family>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>-</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_6">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>100</y>
-     <width>81</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_13">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Радиус рейдов</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_7">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>130</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_14">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>130</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Calibri</family>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>-</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_8">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>130</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_9">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>170</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>170</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Calibri</family>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>-</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_10">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>170</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>31</number>
    </property>
   </widget>
  </widget>

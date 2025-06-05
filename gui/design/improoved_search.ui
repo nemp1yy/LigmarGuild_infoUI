@@ -59,7 +59,8 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(249, 249, 249);
-border-radius: 8px;</string>
+border-radius: 8px;
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Очистить</string>
@@ -80,7 +81,8 @@ border-radius: 8px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(249, 249, 249);
-border-radius: 8px;</string>
+border-radius: 8px;
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Найти</string>
@@ -101,7 +103,8 @@ border-radius: 8px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(249, 249, 249);
-border-radius: 8px;</string>
+border-radius: 8px;
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Отменить</string>
@@ -130,7 +133,7 @@ border-radius: 8px;</string>
     <rect>
      <x>150</x>
      <y>70</y>
-     <width>42</width>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>
@@ -144,9 +147,9 @@ border-radius: 8px;</string>
   <widget class="QSpinBox" name="spinBox_2">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>250</x>
      <y>70</y>
-     <width>42</width>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>
@@ -157,7 +160,7 @@ border-radius: 8px;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>240</x>
      <y>70</y>
      <width>16</width>
      <height>16</height>
@@ -179,7 +182,7 @@ border-radius: 8px;</string>
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>200</y>
+     <y>190</y>
      <width>111</width>
      <height>22</height>
     </rect>
@@ -236,7 +239,7 @@ border-radius: 8px;</string>
     <rect>
      <x>150</x>
      <y>10</y>
-     <width>81</width>
+     <width>121</width>
      <height>22</height>
     </rect>
    </property>
@@ -251,9 +254,9 @@ border-radius: 8px;</string>
   <widget class="QDateEdit" name="dateEdit_2">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>300</x>
      <y>10</y>
-     <width>81</width>
+     <width>111</width>
      <height>22</height>
     </rect>
    </property>
@@ -268,7 +271,7 @@ border-radius: 8px;</string>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>280</x>
      <y>10</y>
      <width>16</width>
      <height>16</height>
@@ -290,7 +293,7 @@ border-radius: 8px;</string>
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>230</y>
+     <y>220</y>
      <width>111</width>
      <height>22</height>
     </rect>
@@ -343,7 +346,7 @@ border-radius: 8px;</string>
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>170</y>
+     <y>160</y>
      <width>111</width>
      <height>22</height>
     </rect>
@@ -506,7 +509,7 @@ border-radius: 8px;</string>
     <rect>
      <x>150</x>
      <y>130</y>
-     <width>42</width>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>
@@ -520,7 +523,7 @@ border-radius: 8px;</string>
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>240</x>
      <y>130</y>
      <width>16</width>
      <height>16</height>
@@ -541,59 +544,9 @@ border-radius: 8px;</string>
   <widget class="QSpinBox" name="spinBox_8">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>250</x>
      <y>130</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_9">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>170</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="maximum">
-    <number>31</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_15">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>170</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Calibri</family>
-     <pointsize>15</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>-</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox_10">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>170</y>
-     <width>42</width>
+     <width>81</width>
      <height>22</height>
     </rect>
    </property>

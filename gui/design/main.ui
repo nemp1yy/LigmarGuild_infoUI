@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Информация</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../Users/mrcre/Downloads/wYf80ci7JoTU_6T-D4_FgDAyOzoCnC168-FkKG4xn6FzqhWsPObUK7Sk3MV-eNkMjzjqbRoNKaz-VUL8l8zSetbT7p2P-j3bhru_qgeMwIItb3grHsYpJ-mjOHYvPJWvJq58y0zE8hCexKDmBlWXWdQ_6nQERm2WkkYguJ_KtTnRj_rkyaJqk8jAxs8ottmTC3AYDiHcKzz3whtQFn6fw.webp</normaloff>../../../Users/mrcre/Downloads/wYf80ci7JoTU_6T-D4_FgDAyOzoCnC168-FkKG4xn6FzqhWsPObUK7Sk3MV-eNkMjzjqbRoNKaz-VUL8l8zSetbT7p2P-j3bhru_qgeMwIItb3grHsYpJ-mjOHYvPJWvJq58y0zE8hCexKDmBlWXWdQ_6nQERm2WkkYguJ_KtTnRj_rkyaJqk8jAxs8ottmTC3AYDiHcKzz3whtQFn6fw.webp</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame_buttons">
     <property name="geometry">
@@ -71,7 +75,7 @@ border-color: rgb(227, 227, 227);</string>
       <string>Поиск по игрокам...</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="search_button">
+    <widget class="QPushButton" name="advanced_search_button">
      <property name="geometry">
       <rect>
        <x>232</x>
@@ -152,6 +156,9 @@ color: rgb(0, 0, 0);</string>
       <property name="icon">
        <iconset>
         <normaloff>../icons/cancel.png</normaloff>../icons/cancel.png</iconset>
+      </property>
+      <property name="shortcut">
+       <string>Del</string>
       </property>
      </widget>
      <widget class="QPushButton" name="add_button">

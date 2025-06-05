@@ -46,61 +46,36 @@ class DatabaseManager:
         return model
 
     @staticmethod
-    def create_flights_relational_model(db):
-        """Создание реляционной модели с поддержкой фильтрации"""
-        model = QSqlRelationalTableModel(db=db)
-        model.setTable("flights")
-
-        # Настройка связей (замените индексы на ваши реальные)
-        model.setRelation(2, QSqlRelation("airlines", "id", "name"))
-        model.setRelation(3, QSqlRelation("aircraft_types", "id", "model"))
-        model.setRelation(4, QSqlRelation("airports", "id", "name"))
-        model.setRelation(5, QSqlRelation("airports", "id", "name"))
-        model.setRelation(8, QSqlRelation("statuses", "id", "name"))
-        # Заголовки
-        model.setHeaderData(1, Qt.Orientation.Horizontal, "Номер рейса")
-        model.setHeaderData(2, Qt.Orientation.Horizontal, "Авиакомпания")
-        model.setHeaderData(3, Qt.Orientation.Horizontal, "Самолёт")
-        model.setHeaderData(4, Qt.Orientation.Horizontal, "Откуда")
-        model.setHeaderData(5, Qt.Orientation.Horizontal, "Куда")
-        model.setHeaderData(6, Qt.Orientation.Horizontal, "Время вылета")
-        model.setHeaderData(7, Qt.Orientation.Horizontal, "Время прибытия")
-        model.setHeaderData(8, Qt.Orientation.Horizontal, "Статус")
-        model.setHeaderData(9, Qt.Orientation.Horizontal, "Гейт")
-
-        model.setEditStrategy(QSqlRelationalTableModel.EditStrategy.OnManualSubmit)
-        model.select()
-
-        return model
-
-    @staticmethod
     def create_table_model(db, table_name):
         """Создание простой табличной модели"""
         model = QSqlTableModel(db=db)
         model.setTable(table_name)
+
         model.select()
         return model
 
+    @staticmethod
+    def create_table_model(db, table_name, where_condition=None):
+        """Создание модели таблицы с опциональным WHERE условием"""
+        from PyQt6.QtSql import QSqlTableModel
+        from PyQt6.QtCore import Qt
 
-class SQLQueries:
-    """Константы SQL-запросов"""
+        model = QSqlTableModel(db=db)
+        model.setTable(table_name)
+        model.setEditStrategy(QSqlTableModel.EditStrategy.OnFieldChange)
 
-    FLIGHTS_BASE = '''
-        SELECT f.id, f.flight_number, al.name AS airline, ac.model AS aircraft,
-               dap.{airport_field} AS departure, aap.{airport_field} AS arrival,
-               f.departure_time, f.arrival_time, st.name AS status, f.gate
-        FROM flights f
-        LEFT JOIN airlines al ON f.airline_id = al.id
-        LEFT JOIN aircraft_types ac ON f.aircraft_type_id = ac.id
-        LEFT JOIN airports dap ON f.departure_airport_id = dap.id
-        LEFT JOIN airports aap ON f.arrival_airport_id = aap.id
-        LEFT JOIN statuses st ON f.status_id = st.id
-    '''
+        # Применяем фильтр если он задан
+        if where_condition:
+            model.setFilter(where_condition)
 
-    @classmethod
-    def flights_query(cls, airport_field='code'):
-        return cls.FLIGHTS_BASE.format(airport_field=airport_field)
+        model.select()
+        return model
 
-    @classmethod
-    def search_query(cls):
-        return cls.flights_query('name') + " WHERE 1=1"
+    @staticmethod
+    def create_query_model(db, query):
+        """Создание модели на основе SQL запроса"""
+        from PyQt6.QtSql import QSqlQueryModel
+
+        model = QSqlQueryModel()
+        model.setQuery(query, db)
+        return model
