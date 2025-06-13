@@ -400,7 +400,17 @@ color: rgb(0, 0, 0);</string>
      <addaction name="action_3"/>
      <addaction name="action_4"/>
     </widget>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>Тип базы данных</string>
+     </property>
+     <addaction name="actionMySQL"/>
+     <addaction name="actionSQLite"/>
+    </widget>
     <addaction name="menu_2"/>
+    <addaction name="menu_4"/>
+    <addaction name="separator"/>
+    <addaction name="action_5"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
