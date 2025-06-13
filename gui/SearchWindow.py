@@ -4,7 +4,6 @@ from PyQt6.QtSql import QSqlQuery
 from utils.database import DatabaseManager
 from utils.ui_helpers import FormUtils
 import sqlite3
-from utils.resource_helper import get_ui_path
 
 
 class AdvancedSearchWindow(QDialog):
@@ -15,10 +14,10 @@ class AdvancedSearchWindow(QDialog):
 
         # Определяем какой UI файл загружать в зависимости от режима
         if search_mode == "simple":
-            uic.loadUi(get_ui_path("minimalistical_search.ui"), self)
+            uic.loadUi("gui/design/minimalistical_search.ui", self)
             self.setWindowTitle("Поиск - Простой режим")
         else:
-            uic.loadUi(get_ui_path("improoved_search.ui"), self)
+            uic.loadUi("gui/design/improoved_search.ui", self)
             self.setWindowTitle("Поиск - Детальный режим")
 
         self.search_mode = search_mode

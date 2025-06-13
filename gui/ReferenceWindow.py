@@ -7,8 +7,7 @@ from utils.ui_helpers import TableManager, MessageHelper
 class ReferenceWindow(QDialog):
     def __init__(self, table_name, parent=None):
         super().__init__(parent)
-        from utils.resource_helper import get_ui_path
-        uic.loadUi(get_ui_path("reference.ui"), self)
+        uic.loadUi("gui/design/reference.ui", self)
 
         self.model = QSqlTableModel(self)
         self.model.setTable(table_name)

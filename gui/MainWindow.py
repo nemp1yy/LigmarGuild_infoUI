@@ -14,9 +14,7 @@ from utils.ui_helpers import TableManager, MessageHelper, MultiFieldFilterProxyM
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-
-        from utils.resource_helper import get_ui_path
-        uic.loadUi(get_ui_path("main.ui"), self)
+        uic.loadUi("gui/design/main.ui", self)
 
         # Подключение к БД и создание модели
         self.db = DatabaseManager.connect()
@@ -44,9 +42,6 @@ class MainWindow(QMainWindow):
 
         # Обновление статус-бара
         self._update_status_bar()
-
-        self.setup_window_icon()
-        self.setup_button_icons()
 
     def _create_simple_model(self):
         """Создание простой модели (менее информативной)"""
@@ -575,41 +570,3 @@ class MainWindow(QMainWindow):
             self.db.rollback()
             print(f"Ошибка при удалении игрока: {e}")
             return False
-
-    def setup_window_icon(self):
-        """Установка иконки окна"""
-        try:
-            from utils.resource_helper import get_icon_path
-            from PyQt6.QtGui import QIcon
-
-            icon_path = get_icon_path("app_icon.ico")  # или .png
-            if os.path.exists(icon_path):
-                self.setWindowIcon(QIcon(icon_path))
-        except Exception as e:
-            print(f"Не удалось загрузить иконку окна: {e}")
-
-    def setup_button_icons(self):
-        """Установка иконок для кнопок"""
-        try:
-            from utils.resource_helper import get_icon_path
-            from PyQt6.QtGui import QIcon
-
-            # Словарь кнопка: файл_иконки
-            button_icons = {
-                'add_button': 'add.png',
-                'delete_button': 'delete.png',
-                'refresh_button': 'refresh.png',
-                'advanced_search_button': 'search.png'
-            }
-
-            for button_name, icon_file in button_icons.items():
-                if hasattr(self, button_name):
-                    icon_path = get_icon_path(icon_file)
-                    if os.path.exists(icon_path):
-                        button = getattr(self, button_name)
-                        button.setIcon(QIcon(icon_path))
-                    else:
-                        print(f"Иконка не найдена: {icon_path}")
-
-        except Exception as e:
-            print(f"Ошибка при установке иконок кнопок: {e}")

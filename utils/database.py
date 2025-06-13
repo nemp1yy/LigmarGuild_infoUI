@@ -1,38 +1,19 @@
-from PyQt6.QtSql import QSqlDatabase, QSqlQueryModel, QSqlQuery, QSqlTableModel, QSqlRelationalTableModel, QSqlRelation, \
-    QSqlRelationalDelegate
+from PyQt6.QtSql import QSqlDatabase, QSqlQueryModel, QSqlQuery, QSqlTableModel, QSqlRelationalTableModel, QSqlRelation, QSqlRelationalDelegate
 from PyQt6.QtWidgets import QMessageBox
 from PyQt6.QtCore import Qt
 import sys
-import os
-from pathlib import Path
-
-
-def get_database_path():
-    """Получение пути к базе данных"""
-    if hasattr(sys, '_MEIPASS'):
-        # Запуск из exe
-        app_data = os.path.join(os.path.expanduser("~"), "GuildManager")
-        return os.path.join(app_data, "ligma.db")
-    else:
-        # Обычный запуск
-        return 'data/ligma.db'
 
 
 class DatabaseManager:
     """Менеджер для работы с базой данных"""
 
     @staticmethod
-    def connect(db_path=None):
+    def connect(db_path='data/ligma.db'):
         """Подключение к базе данных"""
-        if db_path is None:
-            db_path = get_database_path()
-
         db = QSqlDatabase.addDatabase('QSQLITE')
         db.setDatabaseName(db_path)
-
         if not db.open():
-            error_msg = f"Не удалось подключиться к базе данных: {db_path}\n{db.lastError().text()}"
-            QMessageBox.critical(None, "Ошибка БД", error_msg)
+            QMessageBox.critical(None, "Ошибка БД", "Не удалось подключиться к базе данных")
             sys.exit(1)
         return db
 
@@ -62,6 +43,15 @@ class DatabaseManager:
             query.exec(query_text)
 
         model.setQuery(query)
+        return model
+
+    @staticmethod
+    def create_table_model(db, table_name):
+        """Создание простой табличной модели"""
+        model = QSqlTableModel(db=db)
+        model.setTable(table_name)
+
+        model.select()
         return model
 
     @staticmethod
