@@ -1,12 +1,29 @@
 import sqlite3
+import sys
+import os
 from pathlib import Path
 from random import choice
-from data.sqlite.fill_database import fill_db
+
+def get_app_data_path():
+    """Получение пути для данных приложения"""
+    if hasattr(sys, '_MEIPASS'):
+        # Запуск из exe - используем временную папку пользователя
+        app_data = os.path.join(os.path.expanduser("~"), "GuildManager")
+        os.makedirs(app_data, exist_ok=True)
+        return app_data
+    else:
+        # Обычный запуск - создаем папку data если её нет
+        data_dir = Path("data")
+        data_dir.mkdir(exist_ok=True)
+        return str(data_dir)
 
 
 class create_db:
     def __init__(self):
-        self.path_file = Path("data/ligma.db")
+        # Получаем корректный путь для базы данных
+        app_path = get_app_data_path()
+        self.path_file = Path(app_path) / "ligma.db"
+        print(f"База данных будет создана по пути: {self.path_file}")
         self.create()
 
     def create(self):
@@ -14,6 +31,10 @@ class create_db:
             print("База данных уже существует.")
         else:
             print("Создаем базу данных...")
+
+            # Убеждаемся, что родительская папка существует
+            self.path_file.parent.mkdir(parents=True, exist_ok=True)
+
             self.conn = sqlite3.connect(self.path_file)
             self.cursor = self.conn.cursor()
 
@@ -22,12 +43,6 @@ class create_db:
             self.create_events()
             self.create_activities()
             self.create_guild_contribution()
-
-            choice = int(input("Необходимо ли заполнить базу данных? \n1 - да \n0 - нет \nОтвет: "))
-            if choice == 1:
-                fill_db(self.cursor)
-            else:
-                print("База данных не будет заполнена.")
 
             self.conn.commit()
             self.conn.close()
@@ -99,6 +114,3 @@ class create_db:
             FOREIGN KEY (player_id) REFERENCES Players(id)
         )
         ''')
-
-
-

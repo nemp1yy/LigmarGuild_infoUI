@@ -10,7 +10,8 @@ from utils.ui_helpers import MessageHelper
 class PlayerDetailDialog(QDialog):
     def __init__(self, player_id=None, parent=None):
         super().__init__(parent)
-        uic.loadUi("gui/design/about_player.ui", self)
+        from utils.resource_helper import get_ui_path
+        uic.loadUi(get_ui_path("about_player.ui"), self)
 
         self.player_id = player_id
         self.is_new_player = player_id is None

@@ -14,7 +14,9 @@ from utils.ui_helpers import TableManager, MessageHelper, MultiFieldFilterProxyM
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("gui/design/main.ui", self)
+
+        from utils.resource_helper import get_ui_path
+        uic.loadUi(get_ui_path("main.ui"), self)
 
         # Подключение к БД и создание модели
         self.db = DatabaseManager.connect()
@@ -570,3 +572,5 @@ class MainWindow(QMainWindow):
             self.db.rollback()
             print(f"Ошибка при удалении игрока: {e}")
             return False
+
+
